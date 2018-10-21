@@ -1,4 +1,4 @@
-/// <reference types="mocha" />
+/// <reference types="jest" />
 /// <reference types="sinon" />
 
 import * as React from 'react';
@@ -7,21 +7,21 @@ import { mount, configure } from 'enzyme';
 import GithubProfile from './GithubProfile';
 import * as Adapter from 'enzyme-adapter-react-15';
 
-configure({ adapter: new Adapter() });
+import * as sinon from 'sinon';
 
-declare const sinon;
+configure({ adapter: new Adapter() });
 
 describe('<GithubProfile />', () => {
     const descTxt = "TestingThisOneOut";
-    let componentDidMountSpy;
+    let componentDidMountSpy: sinon.SinonSpy;
     let renderedElement;
 
-    before(() => {
+    beforeEach(() => {
         componentDidMountSpy = sinon.spy(GithubProfile.prototype, 'componentDidMount');
-        renderedElement = mount(<GithubProfile githubUserName="joon" userFullName="Joon du Randt"  />);
+        renderedElement = mount(<GithubProfile githubUserName="joon" userFullName="Joon du Randt" />);
     });
 
-    after(() => {
+    afterEach(() => {
         componentDidMountSpy.restore();
     });
 

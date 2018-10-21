@@ -9,6 +9,17 @@ export default class GithubProfile extends React.Component<IGithubProfileProps, 
   constructor() {
     super();
 
+    // TODO: populate the default state with whatever you want
+    // I had to set something to make the jest running
+    this.state = {
+      fullName: '', 
+      githubUserName: ''
+    };
+
+  }
+
+  public componentDidMount(): void {
+    // has to be here to spawn a spy.
   }
 
   public render(): React.ReactElement<IGithubProfileProps> {
