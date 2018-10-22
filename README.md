@@ -25,7 +25,7 @@ This package produces the following:
 
 ### Build options
 
-``gulp clean - Removes all built artifacts from the code base
+```gulp clean - Removes all built artifacts from the code base
 gulp test - Runs Jest testing suite
 gulp serve - Serves the webpart in the SharePoint Framework workbench
 gulp bundle - ?
