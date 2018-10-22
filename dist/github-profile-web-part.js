@@ -100,16 +100,16 @@ var external__GithubProfileWebPartStrings__default = /*#__PURE__*/__webpack_requ
 /* tslint:disable */
 __webpack_require__(6);
 var styles = {
-    githubProfile: 'githubProfile_011a19c4',
-    container: 'container_011a19c4',
-    row: 'row_011a19c4',
-    column: 'column_011a19c4',
-    'ms-Grid': 'ms-Grid_011a19c4',
-    title: 'title_011a19c4',
-    subTitle: 'subTitle_011a19c4',
-    description: 'description_011a19c4',
-    button: 'button_011a19c4',
-    label: 'label_011a19c4',
+    githubProfile: 'githubProfile_7644a870',
+    container: 'container_7644a870',
+    row: 'row_7644a870',
+    column: 'column_7644a870',
+    'ms-Grid': 'ms-Grid_7644a870',
+    title: 'title_7644a870',
+    subTitle: 'subTitle_7644a870',
+    description: 'description_7644a870',
+    button: 'button_7644a870',
+    label: 'label_7644a870',
 };
 /* harmony default export */ var GithubProfile_module_scss = (styles);
 /* tslint:enable */ 
@@ -135,16 +135,28 @@ var __extends = (this && this.__extends) || (function () {
 var GithubProfile_GithubProfile = (function (_super) {
     __extends(GithubProfile, _super);
     function GithubProfile() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super.call(this) || this;
+        // TODO: populate the default state with whatever you want
+        // I had to set something to make the jest running
+        _this.state = {
+            fullName: '',
+            githubUserName: ''
+        };
+        return _this;
     }
+    GithubProfile.prototype.componentDidMount = function () {
+        // has to be here to spawn a spy.
+    };
     GithubProfile.prototype.render = function () {
         return (external__react_["createElement"]("div", { className: GithubProfile_module_scss.githubProfile },
             external__react_["createElement"]("div", { className: GithubProfile_module_scss.container },
                 external__react_["createElement"]("div", { className: GithubProfile_module_scss.row },
                     external__react_["createElement"]("div", { className: GithubProfile_module_scss.column },
-                        external__react_["createElement"]("span", { className: GithubProfile_module_scss.title }, "Welcome to SharePoint!"),
+                        external__react_["createElement"]("span", { className: GithubProfile_module_scss.title },
+                            "Github information for ",
+                            Object(sp_lodash_subset_["escape"])(this.state.fullName)),
                         external__react_["createElement"]("p", { className: GithubProfile_module_scss.subTitle }, "Customize SharePoint experiences using Web Parts."),
-                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.description }, Object(sp_lodash_subset_["escape"])(this.props.description)),
+                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.description }),
                         external__react_["createElement"]("a", { href: "https://aka.ms/spfx", className: GithubProfile_module_scss.button },
                             external__react_["createElement"]("span", { className: GithubProfile_module_scss.label }, "Learn more")))))));
     };
@@ -176,7 +188,8 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
     }
     GithubProfileWebPart.prototype.render = function () {
         var element = external__react_["createElement"](components_GithubProfile, {
-            description: this.properties.description
+            githubUserName: this.properties.githubUserName,
+            userFullName: this.properties.userFullName
         });
         external__react_dom_["render"](element, this.domElement);
     };
@@ -263,7 +276,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, ".githubProfile_011a19c4 .container_011a19c4{max-width:700px;margin:0 auto;box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.githubProfile_011a19c4 .row_011a19c4{margin:0 -8px;box-sizing:border-box;color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:themeDark, default: #005a9e]\";padding:20px}.githubProfile_011a19c4 .row_011a19c4:after,.githubProfile_011a19c4 .row_011a19c4:before{display:table;content:\"\";line-height:0}.githubProfile_011a19c4 .row_011a19c4:after{clear:both}.githubProfile_011a19c4 .column_011a19c4{position:relative;min-height:1px;padding-left:8px;padding-right:8px;box-sizing:border-box}[dir=ltr] .githubProfile_011a19c4 .column_011a19c4{float:left}[dir=rtl] .githubProfile_011a19c4 .column_011a19c4{float:right}.githubProfile_011a19c4 .column_011a19c4 .ms-Grid_011a19c4{padding:0}@media (min-width:640px){.githubProfile_011a19c4 .column_011a19c4{width:83.33333333333334%}}@media (min-width:1024px){.githubProfile_011a19c4 .column_011a19c4{width:66.66666666666666%}}@media (min-width:1024px){[dir=ltr] .githubProfile_011a19c4 .column_011a19c4{left:16.66667%}[dir=rtl] .githubProfile_011a19c4 .column_011a19c4{right:16.66667%}}@media (min-width:640px){[dir=ltr] .githubProfile_011a19c4 .column_011a19c4{left:8.33333%}[dir=rtl] .githubProfile_011a19c4 .column_011a19c4{right:8.33333%}}.githubProfile_011a19c4 .title_011a19c4{font-size:21px;font-weight:100;color:\"[theme:white, default: #ffffff]\"}.githubProfile_011a19c4 .description_011a19c4,.githubProfile_011a19c4 .subTitle_011a19c4{font-size:17px;font-weight:300;color:\"[theme:white, default: #ffffff]\"}.githubProfile_011a19c4 .button_011a19c4{text-decoration:none;height:32px;min-width:80px;background-color:\"[theme:themePrimary, default: #0078d4]\";border-color:\"[theme:themePrimary, default: #0078d4]\";color:\"[theme:white, default: #ffffff]\";outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.githubProfile_011a19c4 .button_011a19c4 .label_011a19c4{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}", ""]);
+exports.push([module.i, ".githubProfile_7644a870 .container_7644a870{max-width:700px;margin:0 auto;box-shadow:0 2px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.githubProfile_7644a870 .row_7644a870{margin:0 -8px;box-sizing:border-box;color:\"[theme:white, default: #ffffff]\";background-color:\"[theme:themeDark, default: #005a9e]\";padding:20px}.githubProfile_7644a870 .row_7644a870:after,.githubProfile_7644a870 .row_7644a870:before{display:table;content:\"\";line-height:0}.githubProfile_7644a870 .row_7644a870:after{clear:both}.githubProfile_7644a870 .column_7644a870{position:relative;min-height:1px;padding-left:8px;padding-right:8px;box-sizing:border-box}[dir=ltr] .githubProfile_7644a870 .column_7644a870{float:left}[dir=rtl] .githubProfile_7644a870 .column_7644a870{float:right}.githubProfile_7644a870 .column_7644a870 .ms-Grid_7644a870{padding:0}@media (min-width:640px){.githubProfile_7644a870 .column_7644a870{width:83.33333333333334%}}@media (min-width:1024px){.githubProfile_7644a870 .column_7644a870{width:66.66666666666666%}}@media (min-width:1024px){[dir=ltr] .githubProfile_7644a870 .column_7644a870{left:16.66667%}[dir=rtl] .githubProfile_7644a870 .column_7644a870{right:16.66667%}}@media (min-width:640px){[dir=ltr] .githubProfile_7644a870 .column_7644a870{left:8.33333%}[dir=rtl] .githubProfile_7644a870 .column_7644a870{right:8.33333%}}.githubProfile_7644a870 .title_7644a870{font-size:21px;font-weight:100;color:\"[theme:white, default: #ffffff]\"}.githubProfile_7644a870 .description_7644a870,.githubProfile_7644a870 .subTitle_7644a870{font-size:17px;font-weight:300;color:\"[theme:white, default: #ffffff]\"}.githubProfile_7644a870 .button_7644a870{text-decoration:none;height:32px;min-width:80px;background-color:\"[theme:themePrimary, default: #0078d4]\";border-color:\"[theme:themePrimary, default: #0078d4]\";color:\"[theme:white, default: #ffffff]\";outline:transparent;position:relative;font-family:Segoe UI WestEuropean,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;border-width:0;text-align:center;cursor:pointer;display:inline-block;padding:0 16px}.githubProfile_7644a870 .button_7644a870 .label_7644a870{font-weight:600;font-size:14px;height:32px;line-height:32px;margin:0 4px;vertical-align:top;display:inline-block}", ""]);
 
 // exports
 

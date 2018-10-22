@@ -1,7 +1,8 @@
 import { Version } from '@microsoft/sp-core-library';
 import { BaseClientSideWebPart, IPropertyPaneConfiguration } from '@microsoft/sp-webpart-base';
 export interface IGithubProfileWebPartProps {
-    description: string;
+    githubUserName: string;
+    userFullName: string;
 }
 export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubProfileWebPartProps> {
     render(): void;

@@ -12,16 +12,18 @@ import GithubProfile from './components/GithubProfile';
 import { IGithubProfileProps } from './components/IGithubProfileProps';
 
 export interface IGithubProfileWebPartProps {
-  description: string;
+  githubUserName: string;
+  userFullName: string;
 }
 
 export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubProfileWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IGithubProfileProps > = React.createElement(
+    const element: React.ReactElement<IGithubProfileProps> = React.createElement(
       GithubProfile,
       {
-        description: this.properties.description
+        githubUserName: this.properties.githubUserName,
+        userFullName: this.properties.userFullName
       }
     );
 

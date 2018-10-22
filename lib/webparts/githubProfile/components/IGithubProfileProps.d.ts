@@ -1,3 +1,4 @@
 export interface IGithubProfileProps {
-    description: string;
+    githubUserName: string;
+    userFullName: string;
 }

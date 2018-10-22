@@ -1,6 +1,9 @@
 /// <reference types="react" />
 import * as React from 'react';
 import { IGithubProfileProps } from './IGithubProfileProps';
-export default class GithubProfile extends React.Component<IGithubProfileProps, {}> {
+import { IGithubProfileState } from './IGithubProfileState';
+export default class GithubProfile extends React.Component<IGithubProfileProps, IGithubProfileState> {
+    constructor();
+    componentDidMount(): void;
     render(): React.ReactElement<IGithubProfileProps>;
 }
