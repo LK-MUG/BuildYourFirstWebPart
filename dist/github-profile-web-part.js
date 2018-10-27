@@ -134,13 +134,13 @@ var __extends = (this && this.__extends) || (function () {
 
 var GithubProfile_GithubProfile = (function (_super) {
     __extends(GithubProfile, _super);
-    function GithubProfile() {
-        var _this = _super.call(this) || this;
-        // TODO: populate the default state with whatever you want
-        // I had to set something to make the jest running
+    function GithubProfile(props) {
+        var _this = _super.call(this, props) || this;
         _this.state = {
-            fullName: '',
-            githubUserName: ''
+            fullName: props.userFullName,
+            githubUserName: props.githubUserName,
+            commits: [],
+            repos: []
         };
         return _this;
     }
@@ -152,17 +152,33 @@ var GithubProfile_GithubProfile = (function (_super) {
             external__react_["createElement"]("div", { className: GithubProfile_module_scss.container },
                 external__react_["createElement"]("div", { className: GithubProfile_module_scss.row },
                     external__react_["createElement"]("div", { className: GithubProfile_module_scss.column },
-                        external__react_["createElement"]("span", { className: GithubProfile_module_scss.title },
+                        external__react_["createElement"]("span", { id: 'header', className: GithubProfile_module_scss.title },
                             "Github information for ",
-                            Object(sp_lodash_subset_["escape"])(this.state.fullName)),
-                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.subTitle }, "Customize SharePoint experiences using Web Parts."),
-                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.description }),
-                        external__react_["createElement"]("a", { href: "https://aka.ms/spfx", className: GithubProfile_module_scss.button },
-                            external__react_["createElement"]("span", { className: GithubProfile_module_scss.label }, "Learn more")))))));
+                            Object(sp_lodash_subset_["escape"])(this.props.userFullName)),
+                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.subTitle }, "See Github repositories and contributions."),
+                        external__react_["createElement"]("p", { className: GithubProfile_module_scss.description }))))));
     };
     return GithubProfile;
 }(external__react_["Component"]));
 /* harmony default export */ var components_GithubProfile = (GithubProfile_GithubProfile);
+
+// CONCATENATED MODULE: ./lib/webparts/githubProfile/components/GithubAPIProvider.js
+var GithubAPIProvider = (function () {
+    function GithubAPIProvider() {
+    }
+    GithubAPIProvider.prototype.ReposForUser = function (githubUser) {
+        return new Promise(function (resolve, reject) {
+            resolve([]);
+        });
+    };
+    GithubAPIProvider.prototype.CommitHistory = function (guthubUser) {
+        return new Promise(function (resolve, reject) {
+            resolve([]);
+        });
+    };
+    return GithubAPIProvider;
+}());
+
 
 // CONCATENATED MODULE: ./lib/webparts/githubProfile/GithubProfileWebPart.js
 var GithubProfileWebPart___extends = (this && this.__extends) || (function () {
@@ -181,6 +197,7 @@ var GithubProfileWebPart___extends = (this && this.__extends) || (function () {
 
 
 
+
 var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
     GithubProfileWebPart___extends(GithubProfileWebPart, _super);
     function GithubProfileWebPart() {
@@ -189,7 +206,8 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
     GithubProfileWebPart.prototype.render = function () {
         var element = external__react_["createElement"](components_GithubProfile, {
             githubUserName: this.properties.githubUserName,
-            userFullName: this.properties.userFullName
+            userFullName: this.properties.userFullName,
+            githubDataProvider: new GithubAPIProvider()
         });
         external__react_dom_["render"](element, this.domElement);
     };
@@ -214,8 +232,11 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
                         {
                             groupName: external__GithubProfileWebPartStrings_["BasicGroupName"],
                             groupFields: [
-                                Object(sp_webpart_base_["PropertyPaneTextField"])('description', {
-                                    label: external__GithubProfileWebPartStrings_["DescriptionFieldLabel"]
+                                Object(sp_webpart_base_["PropertyPaneTextField"])('githubUserName', {
+                                    label: external__GithubProfileWebPartStrings_["UsernameFieldLabel"]
+                                }),
+                                Object(sp_webpart_base_["PropertyPaneTextField"])('userFullName', {
+                                    label: external__GithubProfileWebPartStrings_["FullNameFieldLabel"]
                                 })
                             ]
                         }

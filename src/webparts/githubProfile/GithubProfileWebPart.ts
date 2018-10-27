@@ -10,6 +10,7 @@ import {
 import * as strings from 'GithubProfileWebPartStrings';
 import GithubProfile from './components/GithubProfile';
 import { IGithubProfileProps } from './components/IGithubProfileProps';
+import { GithubAPIProvider } from '../../integration/GithubAPIProvider';
 
 export interface IGithubProfileWebPartProps {
   githubUserName: string;
@@ -23,7 +24,8 @@ export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubP
       GithubProfile,
       {
         githubUserName: this.properties.githubUserName,
-        userFullName: this.properties.userFullName
+        userFullName: this.properties.userFullName,
+        githubDataProvider: new GithubAPIProvider()
       }
     );
 
@@ -49,9 +51,12 @@ export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubP
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
+                PropertyPaneTextField('githubUserName', {
+                  label: strings.UsernameFieldLabel
+                }),
+                PropertyPaneTextField('userFullName', {
+                  label: strings.FullNameFieldLabel
+                })                
               ]
             }
           ]

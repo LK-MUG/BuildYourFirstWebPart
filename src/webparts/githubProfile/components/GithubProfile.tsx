@@ -6,20 +6,33 @@ import { IGithubProfileState } from './IGithubProfileState';
 
 export default class GithubProfile extends React.Component<IGithubProfileProps, IGithubProfileState> {
 
-  constructor() {
-    super();
+  constructor(props: IGithubProfileProps) {
+    super(props);
 
-    // TODO: populate the default state with whatever you want
-    // I had to set something to make the jest running
     this.state = {
       fullName: '', 
-      githubUserName: ''
+      githubUserName: '',
+      commits: [],
+      repos: [],
+      loading: false
     };
+
+    this.loadGithubData = this.loadGithubData.bind(this);
+  }
+
+  private loadGithubData() {
 
   }
 
   public componentDidMount(): void {
     // has to be here to spawn a spy.
+  }
+
+  public componentWillMount() : void {
+    if (this.state.githubUserName != this.props.githubUserName) {
+      this.setState( {fullName: this.props.userFullName, githubUserName : this.props.githubUserName, commits: null, repos: null });
+      this.loadGithubData();
+    }
   }
 
   public render(): React.ReactElement<IGithubProfileProps> {
@@ -28,12 +41,17 @@ export default class GithubProfile extends React.Component<IGithubProfileProps, 
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
-              <span className={styles.title}>Github information for {escape(this.state.fullName)}</span>
-              <p className={styles.subTitle}>Customize SharePoint experiences using Web Parts.</p>
-              <p className={styles.description}></p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
-              </a>
+              <span id='header' className={styles.title}>Github information for {escape(this.props.userFullName)}</span>
+              <p className={styles.subTitle}>Github repositories</p>
+              <p className={styles.description}>
+                {this.state.loading ? <span>"Loading..."</span> : 
+                  this.state.repos ? this.state.repos.map((repo) => <span>{escape(repo.repoName)} <br/></span>): <span>None</span>}
+              </p>
+              <p className={styles.subTitle}>Commit history</p>
+              <p className={styles.description}>
+                {this.state.loading ? <span>"Loading..."</span> : 
+                  this.state.commits ? this.state.commits.map((commit) => <span>{commit.commitDate}: {commit.numberOfCommits} <br/></span>): <span>None</span>}
+              </p>
             </div>
           </div>
         </div>

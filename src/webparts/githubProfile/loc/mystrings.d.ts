@@ -1,7 +1,8 @@
 declare interface IGithubProfileWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  UsernameFieldLabel: string;
+  FullNameFieldLabel: string;
 }
 
 declare module 'GithubProfileWebPartStrings' {
