@@ -26,12 +26,12 @@ describe('GithubApiProvider', () => {
   
   it('Should return commits for a known account', (done) => {
     expect.assertions(1);
-    expect(apiProvider.UserData('joon').then((data) => data.commits.length)).resolves.toBeGreaterThan(0).then(done());
+    expect(apiProvider.UserData('joon').then((data) => data.commits.length)).resolves.toBeGreaterThan(0).then(done);
   });
-  
+
   it('Should return repos for a known account', (done) => {
     expect.assertions(1);
-    expect(apiProvider.UserData('joon').then((data) => data.repos.length)).resolves.toBeGreaterThan(0).then(done());
+    expect(apiProvider.UserData('joon').then((data) => data.repos.length)).resolves.toBeGreaterThan(0).then(done);
   })
 
 });
