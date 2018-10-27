@@ -20,7 +20,6 @@ describe('GithubApiProvider', () => {
   });
   
   // Test for checking if it is working
-  /*
   it('Should do something', () => {
       expect(true).toBeTruthy();
   });
@@ -29,14 +28,10 @@ describe('GithubApiProvider', () => {
     expect.assertions(1);
     expect(apiProvider.UserData('joon').then((data) => data.commits.length)).resolves.toBeGreaterThan(0).then(done());
   });
+  
   it('Should return repos for a known account', (done) => {
     expect.assertions(1);
     expect(apiProvider.UserData('joon').then((data) => data.repos.length)).resolves.toBeGreaterThan(0).then(done());
-  })*/
+  })
 
-  it('Should return repos for a known account', (done) => {
-    expect.assertions(1);
-    expect(apiProvider.ReposForUser('joon').then((data) => data.length)).resolves.toBeGreaterThan(0).then(done());
-  });
-  
 });
