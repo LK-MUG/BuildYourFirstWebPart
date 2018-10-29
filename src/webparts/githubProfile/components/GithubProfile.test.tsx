@@ -69,10 +69,14 @@ describe('<GithubProfile />', () => {
         const headerText = renderedElement.find(cssSelector).text();
         expect(headerText).to.be.equal('Github information for Joon du Randt');
     });
+
 /*
+    These tests don't work. the ComponentDidUpdate logic on the mounted control is not working, causing 
+    the component to only be partially updated.
+
     it('Should count one fork', () => {
         return new Promise((resolve, reject) => {
-            setTimeout(() => {
+            setTimeout(() => {                
                 // define the css selector
                 let cssSelector: string = '#forkCount';
                 // find the element using css selector
