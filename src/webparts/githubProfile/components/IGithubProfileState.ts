@@ -1,9 +1,9 @@
-import { GithubRepoData, GithubCommitHistory } from "../../../integration/IGithubDataProvider";
+import { GithubRepoData, GithubEvent } from "../../../integration/IGithubDataProvider";
 
 export interface IGithubProfileState {  
   fullName: string;
   githubUserName: string;
   repos: GithubRepoData[];
-  commits: GithubCommitHistory[];
+  events: GithubEvent[];
   loading: boolean;
 } 

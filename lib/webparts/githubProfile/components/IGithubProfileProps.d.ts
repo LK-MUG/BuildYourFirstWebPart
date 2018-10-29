@@ -1,4 +1,4 @@
-import { IGithubDataProvider } from "./IGithubDataProvider";
+import { IGithubDataProvider } from "../../../integration/IGithubDataProvider";
 export interface IGithubProfileProps {
     githubUserName: string;
     userFullName: string;

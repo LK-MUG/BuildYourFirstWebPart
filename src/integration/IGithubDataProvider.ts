@@ -2,16 +2,18 @@
 export interface GithubRepoData {
   repoName: string;
   isForked: boolean;
-  lastCommit: Date;
+  lastCommit: string;
+  language: string;
 }
 
-export interface GithubCommitHistory {
-  commitDate: Date;
-  numberOfCommits: number;
+export interface GithubEvent {
+  eventDate: string;
+  eventRepo: string;
+  eventType: string;
 }
 
 export interface GithubSummary {
-  commits: GithubCommitHistory[];
+  events: GithubEvent[];
   repos: GithubRepoData[];
 }
 

@@ -12,7 +12,7 @@ export default class GithubProfile extends React.Component<IGithubProfileProps, 
     this.state = {
       fullName: '', 
       githubUserName: '',
-      commits: [],
+      events: [],
       repos: [],
       loading: false
     };
@@ -21,36 +21,41 @@ export default class GithubProfile extends React.Component<IGithubProfileProps, 
   }
 
   private loadGithubData() {
-
+    this.props.githubDataProvider.UserData(this.props.githubUserName).then((userInfo) =>
+      this.setState({ ...this.state, repos: userInfo.repos, events: userInfo.events, loading: false })
+    );
   }
 
   public componentDidMount(): void {
     // has to be here to spawn a spy.
   }
 
-  public componentWillMount() : void {
+  public componentDidUpdate() : void {
     if (this.state.githubUserName != this.props.githubUserName) {
-      this.setState( {fullName: this.props.userFullName, githubUserName : this.props.githubUserName, commits: null, repos: null });
+      this.setState( {fullName: this.props.userFullName, githubUserName : this.props.githubUserName, loading: true, events: null, repos: null });
       this.loadGithubData();
     }
   }
 
   public render(): React.ReactElement<IGithubProfileProps> {
-    return (
+    let repoCounter = 0;
+    let eventCounter = 0;
+    return (      
       <div className={styles.githubProfile}>
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
               <span id='header' className={styles.title}>Github information for {escape(this.props.userFullName)}</span>
-              <p className={styles.subTitle}>Github repositories</p>
+              <p className={styles.subTitle}>Github repositories created</p>
               <p className={styles.description}>
-                {this.state.loading ? <span>"Loading..."</span> : 
-                  this.state.repos ? this.state.repos.map((repo) => <span>{escape(repo.repoName)} <br/></span>): <span>None</span>}
+                {this.state.loading ? <span>Loading...</span> : 
+                  this.state.repos ? this.state.repos.filter((repo) => !repo.isForked).map((repo) => <span key={++repoCounter} id={"repo"+repoCounter}>{escape(repo.repoName)} <br/></span>): <span>None</span>}
+                  {!this.state.loading ? <span id='forkCount'><br/>Additionally, {this.state.fullName} has forked {this.state.repos.filter((repo) => repo.isForked).length} repositories</span> : null}
               </p>
-              <p className={styles.subTitle}>Commit history</p>
+              <p className={styles.subTitle}>Revent Github events</p>
               <p className={styles.description}>
-                {this.state.loading ? <span>"Loading..."</span> : 
-                  this.state.commits ? this.state.commits.map((commit) => <span>{commit.commitDate}: {commit.numberOfCommits} <br/></span>): <span>None</span>}
+                {this.state.loading ? <span>Loading...</span> : 
+                  this.state.events ? this.state.events.map((event) => <span key={++eventCounter} id={"event" + eventCounter}>{new Date(Date.parse(event.eventDate)).toLocaleDateString()}: {event.eventType} in {event.eventRepo}<br/></span>): <span>None</span>}
               </p>
             </div>
           </div>
