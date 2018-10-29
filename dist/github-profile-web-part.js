@@ -897,6 +897,9 @@ var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 var GithubAPIProvider_GithubAPIProvider = (function () {
     function GithubAPIProvider() {
+        this.config = {
+            headers: { Authorization: 'Token 2bbb035e31b353ca7f0773186a44c7d534fd3238' }
+        };
     }
     GithubAPIProvider.prototype.UserData = function (githubUser) {
         var _this = this;
@@ -912,8 +915,9 @@ var GithubAPIProvider_GithubAPIProvider = (function () {
         });
     };
     GithubAPIProvider.prototype.CommitHistory = function (githubUser) {
+        var _this = this;
         return new Promise(function (resolve, reject) {
-            axios_default.a.get('https://api.github.com/users/' + githubUser + '/events').then(function (response) {
+            axios_default.a.get('https://api.github.com/users/' + githubUser + '/events', _this.config).then(function (response) {
                 var events = response.data;
                 resolve(events.map(function (evt) {
                     return {
@@ -926,8 +930,9 @@ var GithubAPIProvider_GithubAPIProvider = (function () {
         });
     };
     GithubAPIProvider.prototype.ReposForUser = function (githubUser) {
+        var _this = this;
         return new Promise(function (resolve, reject) {
-            axios_default.a.get('https://api.github.com/users/' + githubUser + '/repos').then(function (response) {
+            axios_default.a.get('https://api.github.com/users/' + githubUser + '/repos', _this.config).then(function (response) {
                 var repos = response.data;
                 resolve(repos.map(function (gar) {
                     return { repoName: gar.name, isForked: gar.fork, lastCommit: gar.pushed_at, language: gar.language };

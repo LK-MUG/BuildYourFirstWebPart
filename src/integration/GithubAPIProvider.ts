@@ -61,7 +61,7 @@ interface GithubAPIEvent {
 
 export class GithubAPIProvider implements IGithubDataProvider {
   
-  config: AxiosRequestConfig;
+  private config: AxiosRequestConfig;
 
   constructor() {
     this.config = {

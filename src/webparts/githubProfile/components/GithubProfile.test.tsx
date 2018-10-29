@@ -71,7 +71,7 @@ describe('<GithubProfile />', () => {
     });
 
 /*
-    These tests don't work. the ComponentDidUpdate logic on the mounted control is not working, causing 
+    These tests don't work. the ComponentDidUpdate logic on the mounted control is not running, causing 
     the component to only be partially updated.
 
     it('Should count one fork', () => {
