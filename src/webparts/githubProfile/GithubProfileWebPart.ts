@@ -99,7 +99,7 @@ export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubP
       return;
     }
 
-    let userInfo = this.readUserInfo(listItemId).then(
+    this.readUserInfo(listItemId).then(
       (userInfo) => {
         const element: React.ReactElement<IGithubProfileProps> = React.createElement(
           GithubProfile,

@@ -1053,7 +1053,7 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
             external__react_dom_["render"](element, this.domElement);
             return;
         }
-        var userInfo = this.readUserInfo(listItemId).then(function (userInfo) {
+        this.readUserInfo(listItemId).then(function (userInfo) {
             var element = external__react_["createElement"](components_GithubProfile, {
                 githubUserName: userInfo.githubUserName,
                 userFullName: userInfo.userFullName,
