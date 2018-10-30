@@ -1,4 +1,4 @@
-define("9260d059-8306-427f-8d55-5622d5a7fe1d_0.0.1", ["react","react-dom","@microsoft/sp-core-library","@microsoft/sp-webpart-base","GithubProfileWebPartStrings","@microsoft/sp-lodash-subset"], function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_18__) { return /******/ (function(modules) { // webpackBootstrap
+define("9260d059-8306-427f-8d55-5622d5a7fe1d_0.0.1", ["react","@microsoft/sp-lodash-subset","react-dom","@microsoft/sp-core-library","@microsoft/sp-webpart-base","GithubProfileWebPartStrings","@microsoft/sp-http"], function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_10__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_39__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -60,7 +60,7 @@ define("9260d059-8306-427f-8d55-5622d5a7fe1d_0.0.1", ["react","react-dom","@micr
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,7 +70,7 @@ define("9260d059-8306-427f-8d55-5622d5a7fe1d_0.0.1", ["react","react-dom","@micr
 "use strict";
 
 
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var isBuffer = __webpack_require__(21);
 
 /*global toString:true*/
@@ -397,10 +397,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   }
   return adapter;
 }
@@ -485,6 +485,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -502,7 +508,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -513,7 +519,7 @@ var settle = __webpack_require__(25);
 var buildURL = __webpack_require__(27);
 var parseHeaders = __webpack_require__(28);
 var isURLSameOrigin = __webpack_require__(29);
-var createError = __webpack_require__(5);
+var createError = __webpack_require__(6);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(30);
 
 module.exports = function xhrAdapter(config) {
@@ -689,7 +695,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -714,7 +720,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -726,7 +732,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -752,7 +758,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -763,24 +769,24 @@ var external__react_ = __webpack_require__(2);
 var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
 
 // EXTERNAL MODULE: external "react-dom"
-var external__react_dom_ = __webpack_require__(9);
+var external__react_dom_ = __webpack_require__(10);
 var external__react_dom__default = /*#__PURE__*/__webpack_require__.n(external__react_dom_);
 
 // EXTERNAL MODULE: external "@microsoft/sp-core-library"
-var sp_core_library_ = __webpack_require__(10);
+var sp_core_library_ = __webpack_require__(11);
 var sp_core_library__default = /*#__PURE__*/__webpack_require__.n(sp_core_library_);
 
 // EXTERNAL MODULE: external "@microsoft/sp-webpart-base"
-var sp_webpart_base_ = __webpack_require__(11);
+var sp_webpart_base_ = __webpack_require__(12);
 var sp_webpart_base__default = /*#__PURE__*/__webpack_require__.n(sp_webpart_base_);
 
 // EXTERNAL MODULE: external "GithubProfileWebPartStrings"
-var external__GithubProfileWebPartStrings_ = __webpack_require__(12);
+var external__GithubProfileWebPartStrings_ = __webpack_require__(13);
 var external__GithubProfileWebPartStrings__default = /*#__PURE__*/__webpack_require__.n(external__GithubProfileWebPartStrings_);
 
 // CONCATENATED MODULE: ./lib/webparts/githubProfile/components/GithubProfile.module.scss.js
 /* tslint:disable */
-__webpack_require__(13);
+__webpack_require__(14);
 var styles = {
     githubProfile: 'githubProfile_2998bff7',
     container: 'container_2998bff7',
@@ -797,7 +803,7 @@ var styles = {
 /* tslint:enable */ 
 
 // EXTERNAL MODULE: external "@microsoft/sp-lodash-subset"
-var sp_lodash_subset_ = __webpack_require__(18);
+var sp_lodash_subset_ = __webpack_require__(3);
 var sp_lodash_subset__default = /*#__PURE__*/__webpack_require__.n(sp_lodash_subset_);
 
 // CONCATENATED MODULE: ./lib/webparts/githubProfile/components/GithubProfile.js
@@ -843,7 +849,10 @@ var GithubProfile_GithubProfile = (function (_super) {
         });
     };
     GithubProfile.prototype.componentDidMount = function () {
-        // has to be here to spawn a spy.
+        if (this.state.githubUserName != this.props.githubUserName) {
+            this.setState({ fullName: this.props.userFullName, githubUserName: this.props.githubUserName, loading: true, events: null, repos: null });
+            this.loadGithubData();
+        }
     };
     GithubProfile.prototype.componentDidUpdate = function () {
         if (this.state.githubUserName != this.props.githubUserName) {
@@ -944,6 +953,10 @@ var GithubAPIProvider_GithubAPIProvider = (function () {
 }());
 
 
+// EXTERNAL MODULE: external "@microsoft/sp-http"
+var sp_http_ = __webpack_require__(39);
+var sp_http__default = /*#__PURE__*/__webpack_require__.n(sp_http_);
+
 // CONCATENATED MODULE: ./lib/webparts/githubProfile/GithubProfileWebPart.js
 var GithubProfileWebPart___extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -962,18 +975,95 @@ var GithubProfileWebPart___extends = (this && this.__extends) || (function () {
 
 
 
+
+
 var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
     GithubProfileWebPart___extends(GithubProfileWebPart, _super);
     function GithubProfileWebPart() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    GithubProfileWebPart.prototype.render = function () {
-        var element = external__react_["createElement"](components_GithubProfile, {
-            githubUserName: this.properties.githubUserName,
-            userFullName: this.properties.userFullName,
-            githubDataProvider: new GithubAPIProvider_GithubAPIProvider()
+    GithubProfileWebPart.prototype.readUserInfo = function (listItemId) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.context.spHttpClient.get(_this.context.pageContext.web.absoluteUrl +
+                ("/_api/web/lists/getByTitle('" + Object(sp_lodash_subset_["escape"])(_this.properties.listName) + "')/Items(" + listItemId + ")?$select=GithubUserName,ApplicantFullName"), sp_http_["SPHttpClient"].configurations.v1)
+                .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (responseJSON) {
+                        if (responseJSON != null) {
+                            resolve({ githubUserName: responseJSON.GithubUserName, userFullName: responseJSON.ApplicantFullName });
+                        }
+                    });
+                }
+                else if (response.status === 404) {
+                    reject("Item with id " + listItemId + " could not be found");
+                }
+                else {
+                    reject("Error: " + response.statusText + ". Cannot display information");
+                }
+            })
+                .catch(function (error) {
+                reject(error);
+            });
         });
-        external__react_dom_["render"](element, this.domElement);
+    };
+    GithubProfileWebPart.prototype.readListItemId = function () {
+        var url = new URL(window.location.href);
+        return +url.searchParams.get("listItemId");
+    };
+    GithubProfileWebPart.prototype.validateListName = function (value) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (value === null ||
+                value.length === 0) {
+                resolve('Provide the list name');
+                return;
+            }
+            _this.context.spHttpClient.get(_this.context.pageContext.web.absoluteUrl +
+                ("/_api/web/lists/getByTitle('" + Object(sp_lodash_subset_["escape"])(value) + "')?$select=Id"), sp_http_["SPHttpClient"].configurations.v1)
+                .then(function (response) {
+                if (response.ok) {
+                    resolve('');
+                    return;
+                }
+                else if (response.status === 404) {
+                    resolve("List '" + Object(sp_lodash_subset_["escape"])(value) + "' doesn't exist in the current site");
+                    return;
+                }
+                else {
+                    resolve("Error: " + response.statusText + ". Please try again");
+                    return;
+                }
+            })
+                .catch(function (error) {
+                resolve(error);
+            });
+        });
+    };
+    GithubProfileWebPart.prototype.render = function () {
+        var _this = this;
+        var listItemId = this.readListItemId();
+        if (!listItemId) {
+            var element = external__react_["createElement"]('div', null, "The containing page must have a 'listItemId' parameter for this control to load");
+            external__react_dom_["render"](element, this.domElement);
+            return;
+        }
+        if (!this.properties.listName) {
+            var element = external__react_["createElement"]('div', null, "Please supply a list name in the properties pane");
+            external__react_dom_["render"](element, this.domElement);
+            return;
+        }
+        var userInfo = this.readUserInfo(listItemId).then(function (userInfo) {
+            var element = external__react_["createElement"](components_GithubProfile, {
+                githubUserName: userInfo.githubUserName,
+                userFullName: userInfo.userFullName,
+                githubDataProvider: new GithubAPIProvider_GithubAPIProvider()
+            });
+            external__react_dom_["render"](element, _this.domElement);
+        }, function (error) {
+            var element = external__react_["createElement"]('div', null, "Could not read user info. Error: " + error);
+            external__react_dom_["render"](element, _this.domElement);
+        });
     };
     GithubProfileWebPart.prototype.onDispose = function () {
         external__react_dom_["unmountComponentAtNode"](this.domElement);
@@ -996,11 +1086,9 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
                         {
                             groupName: external__GithubProfileWebPartStrings_["BasicGroupName"],
                             groupFields: [
-                                Object(sp_webpart_base_["PropertyPaneTextField"])('githubUserName', {
-                                    label: external__GithubProfileWebPartStrings_["UsernameFieldLabel"]
-                                }),
-                                Object(sp_webpart_base_["PropertyPaneTextField"])('userFullName', {
-                                    label: external__GithubProfileWebPartStrings_["FullNameFieldLabel"]
+                                Object(sp_webpart_base_["PropertyPaneTextField"])('listName', {
+                                    label: external__GithubProfileWebPartStrings_["ListNameFieldLabel"],
+                                    onGetErrorMessage: this.validateListName.bind(this)
                                 })
                             ]
                         }
@@ -1013,12 +1101,6 @@ var GithubProfileWebPart_GithubProfileWebPart = (function (_super) {
 }(sp_webpart_base_["BaseClientSideWebPart"]));
 /* harmony default export */ var githubProfile_GithubProfileWebPart = __webpack_exports__["default"] = (GithubProfileWebPart_GithubProfileWebPart);
 
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_9__;
 
 /***/ }),
 /* 10 */
@@ -1040,10 +1122,16 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_12__;
 
 /***/ }),
 /* 13 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_13__;
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(14);
-var loader = __webpack_require__(16);
+var content = __webpack_require__(15);
+var loader = __webpack_require__(17);
 
 if(typeof content === "string") content = [[module.i, content]];
 
@@ -1053,10 +1141,10 @@ for (var i = 0; i < content.length; i++) loader.loadStyles(content[i][1], true);
 if(content.locals) module.exports = content.locals;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)(false);
+exports = module.exports = __webpack_require__(16)(false);
 // imports
 
 
@@ -1067,7 +1155,7 @@ exports.push([module.i, ".githubProfile_2998bff7 .container_2998bff7{max-width:7
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /*
@@ -1149,7 +1237,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1499,10 +1587,10 @@ function shouldUseCssText() {
 }
 
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 var g;
@@ -1529,12 +1617,6 @@ module.exports = g;
 
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_18__;
-
-/***/ }),
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1548,7 +1630,7 @@ module.exports = __webpack_require__(20);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var Axios = __webpack_require__(22);
 var defaults = __webpack_require__(1);
 
@@ -1583,9 +1665,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(7);
+axios.Cancel = __webpack_require__(8);
 axios.CancelToken = __webpack_require__(37);
-axios.isCancel = __webpack_require__(6);
+axios.isCancel = __webpack_require__(7);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -1928,7 +2010,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(5);
+var createError = __webpack_require__(6);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -2361,7 +2443,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(34);
-var isCancel = __webpack_require__(6);
+var isCancel = __webpack_require__(7);
 var defaults = __webpack_require__(1);
 var isAbsoluteURL = __webpack_require__(35);
 var combineURLs = __webpack_require__(36);
@@ -2521,7 +2603,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(7);
+var Cancel = __webpack_require__(8);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -2611,6 +2693,12 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_39__;
 
 /***/ })
 /******/ ])});;

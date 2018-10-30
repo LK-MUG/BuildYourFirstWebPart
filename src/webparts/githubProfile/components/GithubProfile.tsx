@@ -27,7 +27,10 @@ export default class GithubProfile extends React.Component<IGithubProfileProps, 
   }
 
   public componentDidMount(): void {
-    // has to be here to spawn a spy.
+    if (this.state.githubUserName != this.props.githubUserName) {
+      this.setState( {fullName: this.props.userFullName, githubUserName : this.props.githubUserName, loading: true, events: null, repos: null });
+      this.loadGithubData();
+    }
   }
 
   public componentDidUpdate() : void {

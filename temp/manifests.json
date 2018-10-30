@@ -769,14 +769,14 @@
           "default": "Other"
         },
         "title": {
-          "default": "Github-profile"
+          "default": "Github profile"
         },
         "description": {
-          "default": "Github-profile description"
+          "default": "Renders information from a user's github profile"
         },
         "officeFabricIconFontName": "Page",
         "properties": {
-          "description": "Github-profile"
+          "listName": ""
         }
       }
     ],
@@ -800,6 +800,11 @@
           "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
           "failoverPath": "node_modules/react/dist/react.js"
         },
+        "@microsoft/sp-lodash-subset": {
+          "type": "component",
+          "version": "1.6.0",
+          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+        },
         "react-dom": {
           "type": "component",
           "version": "15.6.2",
@@ -816,10 +821,10 @@
           "version": "1.6.0",
           "id": "974a7777-0990-4136-8fa6-95d80114c2e0"
         },
-        "@microsoft/sp-lodash-subset": {
+        "@microsoft/sp-http": {
           "type": "component",
           "version": "1.6.0",
-          "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a"
+          "id": "c07208f0-ea3b-4c1a-9965-ac1b825211a6"
         }
       }
     }
