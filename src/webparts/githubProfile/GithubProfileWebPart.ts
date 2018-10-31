@@ -115,7 +115,7 @@ export default class GithubProfileWebPart extends BaseClientSideWebPart<IGithubP
         let element = React.createElement('div', null, `Could not read user info. Error: ${error}`);
         ReactDom.render(element, this.domElement);
       }
-    )
+    );
   }
 
   protected onDispose(): void {
