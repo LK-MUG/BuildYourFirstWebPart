@@ -1,8 +1,8 @@
 Build status
 [![Build Status](https://dev.azure.com/LetterkennyMicrosoftUserGroup/Office365Bootcamp/_apis/build/status/LK-MUG.BuildYourFirstWebPart)](https://dev.azure.com/LetterkennyMicrosoftUserGroup/Office365Bootcamp/_build/latest?definitionId=1)
 
-
-## Letterkenny Microsoft User Group(#LKMUG) - Global Office 365 Developer Bootcamp 
+# Global Office 365 Developer Bootcamp 
+## By Letterkenny Microsoft User Group(#LKMUG)
 
 First webpart for the global O365 bootcamp session in Letterkenny, November 2018
 
